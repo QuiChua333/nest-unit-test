@@ -60,23 +60,23 @@ describe('UserController (e2e)', () => {
       });
   });
 
-  // it('/user/:id (GET)', async () => {
-  //   const newUser = repository.create({
-  //     firstname: 'Qui',
-  //     lastname: 'Huynh',
-  //     email: 'quichua333@gmail.com',
-  //   });
-  //   const savedUser = await repository.save(newUser);
+  it('/user/:id (GET)', async () => {
+    const newUser = repository.create({
+      firstname: 'Qui',
+      lastname: 'Huynh',
+      email: 'quichua333@gmail.com',
+    });
+    const savedUser = await repository.save(newUser);
 
-  //   return request(app.getHttpServer())
-  //     .get(`/user/${savedUser.id}`)
-  //     .expect(200)
-  //     .then((res) => {
-  //       expect(res.body).toMatchObject({
-  //         firstname: 'Qui',
-  //         lastname: 'Huynh',
-  //         email: 'quichua333@gmail.com',
-  //       });
-  //     });
-  // });
+    return request(app.getHttpServer())
+      .get(`/user/${savedUser.id}`)
+      .expect(200)
+      .then((res) => {
+        expect(res.body).toMatchObject({
+          firstname: 'Qui',
+          lastname: 'Huynh',
+          email: 'quichua333@gmail.com',
+        });
+      });
+  });
 });
